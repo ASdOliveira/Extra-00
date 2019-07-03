@@ -1,0 +1,2 @@
+03/07/2019 15:06:42  Connected with result code: 0
+03/07/2019 15:13:13  Connected successfully

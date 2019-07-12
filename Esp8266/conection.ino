@@ -12,6 +12,7 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 int disc = 0;
 int con = 0;
+int timeout =0;
 void setup() {
  
   Serial.begin(115200);
@@ -56,19 +57,22 @@ void loop() {
             while (!client.connected()) {
           Serial.println(client.connected());
           Serial.println(WiFi.status());
-          if(WiFi.status() != WL_CONNECTED){          
-                    
+          if(WiFi.status() != WL_CONNECTED){                           
                       WiFi.begin(ssid, password);
-                     
+                      timeout = 0;
                       while (WiFi.status() != WL_CONNECTED) {
                         delay(500);
                         Serial.println("Connecting to WiFi..");
+                        timeout += 500;
+                        if (timeout > 5000) 
+                          break;
                       }
-                     
+                        if (timeout > 5000)
+                          break;
                       Serial.println("Connected to the WiFi network");
-                    Serial.println("Connecting to MQTT...");
+                      Serial.println("Connecting to MQTT...");
                  
-                    if (Serial.println(client.connect("ESP32Client"))) {
+                      if (Serial.println(client.connect("ESP32Client"))) {
                  
                       Serial.println("connected");
                  
@@ -85,9 +89,15 @@ void loop() {
           disc++;
     }
 }
-client.publish("ArduinoeCia","Connected");
-client.publish("ArduinoeCia",String(con).c_str());
-client.publish("ArduinoeCia","Disconnected");
-client.publish("ArduinoeCia",String(disc).c_str());    
+
+if (timeout > 5000){
+  Serial.println("Failed to connect WIFI, Timout error");
+}
+else{
+  client.publish("ArduinoeCia","Connected");
+  client.publish("ArduinoeCia",String(con).c_str());
+  client.publish("ArduinoeCia","Disconnected");
+  client.publish("ArduinoeCia",String(disc).c_str());    
+}
 delay(1000);
 }

@@ -6,23 +6,31 @@
  * 
  * Arysson Oliveira
 */
-#include <ESP8266WiFi.h> 
+
+/** Includes & Defines **/
+#define ARDUINOJSON_ENABLE_ARDUINO_STRING 1
+#include <WiFi.h> 
 #include <PubSubClient.h>
 #include "DHT.h"
+#include <ArduinoJson.h>
+#define FANPIN 5
 
+/* JSON Settings*/
+DynamicJsonBuffer JSONbuffer;
+JsonObject& JSONencoder = JSONbuffer.createObject();
+JsonArray& values = JSONencoder.createNestedArray("values");
+char JSONmessageBuffer[100];
 
-// DHT 
-#define DHTPIN 5
+/* DHT Setings*/ 
+#define DHTPIN 4
 #define DHTTYPE DHT22
-
 DHT dht(DHTPIN, DHTTYPE);
 
 long lastTime;
 
-
-//WiFi
-const char* SSID = "casa";           // SSID da rede WiFi que deseja se conectar
-const char* PASSWORD = "garantia";   // Senha da rede WiFi que deseja se conectar
+/* WiFi Settings*/
+const char* SSID = "VIVO-C120";           // SSID da rede WiFi que deseja se conectar
+const char* PASSWORD = "4EPgEd7Tm7";   // Senha da rede WiFi que deseja se conectar
 WiFiClient wifiClient;                        
 
 /*
@@ -33,14 +41,15 @@ const char* user = "petateba";
 const char* pass = "PFVknub1lGVQ";
 */
 
-//MQTT Server Raspberry Settings
-const char* BROKER_MQTT = "192.168.0.103"; //URL do broker MQTT que se deseja utilizar
+/* MQTT Server Raspberry Settings */
+const char* BROKER_MQTT = "192.168.15.8"; //URL do broker MQTT que se deseja utilizar
 int BROKER_PORT = 1883;                      // Porta do Broker MQTT
 const char* user = "pi";
 const char* pass = "pi";
 
 //ID and Topic to publish
-#define ID_MQTT  "Device 1"            
+#define ID_MQTT  "Device 1"
+#define ID_MQTT_INT 1            
 #define TOPIC_PUBLISH "Temp"        //Informe um Tópico único. Caso sejam usados tópicos em duplicidade, o último irá eliminar o anterior.
 #define TOPIC_SUBSCRIBE "Temp Rx"
 
@@ -61,23 +70,37 @@ void setup()
   conectaWiFi();
   MQTT.setServer(BROKER_MQTT, BROKER_PORT);
   MQTT.setCallback(recebePacote); 
+  //JSONbuffer[String("deviceId")] =  ID_MQTT;
+  values.add( ID_MQTT_INT );
+  values.add( 0 );
+  values.add( 0 );
+  values.add( 0 );
 }
 
 void loop() 
 {
   mantemConexoes();
-  //enviaPacote();
+  enviaPacote();
   MQTT.loop();
+  delay(1000);
 }
 
 void mantemConexoes() 
 {
-  if (!MQTT.connected()) 
-  {
-     conectaMQTT(); 
+ 
+  if(WiFi.status() == WL_CONNECTED){  
+      if (!MQTT.connected()) 
+      {
+         conectaMQTT(); 
+      }
   }
-  
-  conectaWiFi(); //se não há conexão com o WiFI, a conexão é refeita
+  else{
+    conectaWiFi(); //se não há conexão com o WiFI, a conexão é refeita
+    if (!MQTT.connected()) 
+      {
+         conectaMQTT(); 
+      }
+  }
 }
 
 void conectaWiFi() {
@@ -112,7 +135,7 @@ void conectaMQTT()
   {
       Serial.print("Conectando ao Broker MQTT: ");
       Serial.println(BROKER_MQTT);
-      if (MQTT.connect(ID_MQTT,user,pass)) 
+      if (MQTT.connect(ID_MQTT)) 
       {
         MQTT.subscribe(TOPIC_SUBSCRIBE);
         Serial.println("Conectado ao Broker com sucesso!");
@@ -151,14 +174,15 @@ void enviaPacote()
   
   //if( (millis() - lastTime) > 3000)
   //{
-    float t = dht.readTemperature();
-    float h = dht.readHumidity();
-    //hora = hora + 1;
-    //Serial.println(t);
-    Serial.println(String(t).c_str());
-    MQTT.publish(TOPIC_PUBLISH, String(t).c_str());
-    //MQTT.publish(TOPIC_PUBLISH2, String(h).c_str());
-    //MQTT.publish(TOPIC_PUBLISH3, String(hora).c_str());
+    
+    values.set(1, dht.readTemperature(),2 );
+    values.set(2, dht.readHumidity(),2 );
+    values.set(3, !digitalRead(5));
+    Serial.println(JSONmessageBuffer);
+    
+    JSONencoder.printTo(JSONmessageBuffer, sizeof(JSONmessageBuffer));
+    MQTT.publish(TOPIC_PUBLISH,JSONmessageBuffer);
+    
     //lastTime = millis();
   //}
          

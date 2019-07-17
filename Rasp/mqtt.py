@@ -2,6 +2,7 @@ import paho.mqtt.client as mqtt
 import time
 import re
 import log
+from store_Sensor_Data_to_DB import sensor_Data_Handler
 
 MQTT_SERVER = "localhost"
 MQTT_PATH = "Temp"
@@ -19,14 +20,19 @@ def on_connect(client, userdata, flags, rc):
  
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    print(msg.topic+" "+str(msg.payload.decode("utf-8","ignore")))
-    log.Action(msg.topic + " " + str(msg.payload.decode("utf-8","ignore")))
+    print ("MQTT Data Received...")
+    #print ("MQTT Topic: " + msg.topic)  
+    #print ("Data: " + msg.payload)
+    sensor_Data_Handler(msg.topic, msg.payload)
+    
+    #print(msg.topic+" "+str(msg.payload.decode("utf-8","ignore")))
+    #log.Action(msg.topic + " " + str(msg.payload.decode("utf-8","ignore")))
     # more callbacks, etc
  
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
-client.username_pw_set("pi","pi") 
+client.username_pw_set("pia","pia") 
 client.connect(MQTT_SERVER, 1883, 60)
 
 # Blocking call that processes network traffic, dispatches callbacks and
@@ -44,9 +50,8 @@ client.loop_start()
     
 
 while True:
-    client.publish("Temp Rx","1")
-    time.sleep(0.2)
-    client.publish("Temp Rx","0")
-    time.sleep(60)
+    #client.publish("Temp Rx","1")
+    time.sleep(10)
+    #client.publish("Temp Rx","0")
 
     

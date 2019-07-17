@@ -1,2 +1,153 @@
 03/07/2019 15:06:42  Connected with result code: 0
 03/07/2019 15:13:13  Connected successfully
+10/07/2019 16:46:14  Connected to broker successfully
+10/07/2019 17:07:06  Connected to broker successfully
+10/07/2019 17:35:06  Connected to broker successfully
+16/07/2019 17:53:18  Connected to broker successfully
+16/07/2019 17:53:19  Temp {"values":[1,29.60,71.40,true]}
+16/07/2019 17:53:19  Temp {"values":[1,29.60,71.40,true]}
+16/07/2019 17:53:20  Temp {"values":[1,29.60,71.40,true]}
+16/07/2019 17:53:21  Temp {"values":[1,29.60,71.40,true]}
+16/07/2019 17:53:22  Temp {"values":[1,29.60,71.40,true]}
+16/07/2019 17:53:23  Temp {"values":[1,29.60,71.40,true]}
+16/07/2019 17:53:24  Temp {"values":[1,29.60,71.40,true]}
+16/07/2019 17:53:25  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:53:26  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:53:27  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:53:28  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:53:29  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:53:30  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:53:31  Temp {"values":[1,29.50,71.20,true]}
+16/07/2019 17:53:32  Temp {"values":[1,29.50,71.20,true]}
+16/07/2019 17:53:34  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:53:34  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:53:35  Temp {"values":[1,29.50,71.20,true]}
+16/07/2019 17:53:36  Temp {"values":[1,29.50,71.20,true]}
+16/07/2019 17:53:37  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:53:38  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:53:39  Temp {"values":[1,29.60,72.10,true]}
+16/07/2019 17:53:40  Temp {"values":[1,29.60,72.10,true]}
+16/07/2019 17:53:41  Temp {"values":[1,29.60,72.40,true]}
+16/07/2019 17:53:42  Temp {"values":[1,29.60,72.40,false]}
+16/07/2019 17:53:43  Temp {"values":[1,29.60,73.10,false]}
+16/07/2019 17:53:44  Temp {"values":[1,29.60,73.10,false]}
+16/07/2019 17:53:45  Temp {"values":[1,29.50,72.60,false]}
+16/07/2019 17:53:46  Temp {"values":[1,29.50,72.60,false]}
+16/07/2019 17:53:47  Temp {"values":[1,29.60,72.50,true]}
+16/07/2019 17:53:48  Temp {"values":[1,29.60,72.50,true]}
+16/07/2019 17:53:49  Temp {"values":[1,29.60,72.30,true]}
+16/07/2019 17:53:51  Temp {"values":[1,29.60,72.30,false]}
+16/07/2019 17:53:51  Temp {"values":[1,29.60,72.20,false]}
+16/07/2019 17:53:52  Temp {"values":[1,29.60,72.20,false]}
+16/07/2019 17:53:53  Temp {"values":[1,29.60,71.90,false]}
+16/07/2019 17:53:54  Temp {"values":[1,29.60,71.90,false]}
+16/07/2019 17:53:55  Temp {"values":[1,29.60,72.00,true]}
+16/07/2019 17:53:56  Temp {"values":[1,29.60,72.00,true]}
+16/07/2019 17:53:57  Temp {"values":[1,29.60,71.80,true]}
+16/07/2019 17:53:58  Temp {"values":[1,29.60,71.80,true]}
+16/07/2019 17:54:00  Temp {"values":[1,29.60,71.80,true]}
+16/07/2019 17:54:00  Temp {"values":[1,29.60,71.80,true]}
+16/07/2019 17:54:01  Temp {"values":[1,29.60,71.70,true]}
+16/07/2019 17:54:02  Temp {"values":[1,29.60,71.70,true]}
+16/07/2019 17:54:03  Temp {"values":[1,29.60,71.70,true]}
+16/07/2019 17:54:04  Temp {"values":[1,29.60,71.70,true]}
+16/07/2019 17:54:05  Temp {"values":[1,29.60,71.60,true]}
+16/07/2019 17:54:06  Temp {"values":[1,29.60,71.60,true]}
+16/07/2019 17:54:07  Temp {"values":[1,29.60,71.60,true]}
+16/07/2019 17:54:08  Temp {"values":[1,29.60,71.60,true]}
+16/07/2019 17:54:09  Temp {"values":[1,29.60,71.60,true]}
+16/07/2019 17:54:11  Temp {"values":[1,29.60,71.60,true]}
+16/07/2019 17:54:11  Temp {"values":[1,29.60,71.60,true]}
+16/07/2019 17:54:12  Temp {"values":[1,29.60,71.60,true]}
+16/07/2019 17:54:13  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:14  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:15  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:16  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:17  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:18  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:19  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:21  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:21  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:21  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:22  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:23  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:24  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:25  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:26  Temp {"values":[1,29.60,71.50,true]}
+16/07/2019 17:54:27  Temp {"values":[1,29.60,71.40,true]}
+16/07/2019 17:54:28  Temp {"values":[1,29.60,71.40,true]}
+16/07/2019 17:54:29  Temp {"values":[1,29.60,71.40,true]}
+16/07/2019 17:54:30  Temp {"values":[1,29.60,71.40,true]}
+16/07/2019 17:54:31  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:32  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:33  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:34  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:35  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:36  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:37  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:40  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:40  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:40  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:41  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:42  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:43  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:44  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:45  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:46  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:47  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:48  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:49  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:50  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:51  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:52  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:53  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:54  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:55  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:56  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:58  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:58  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:54:59  Temp {"values":[1,29.60,71.20,true]}
+16/07/2019 17:55:00  Temp {"values":[1,29.60,71.20,true]}
+16/07/2019 17:55:01  Temp {"values":[1,29.60,71.20,true]}
+16/07/2019 17:55:02  Temp {"values":[1,29.60,71.20,true]}
+16/07/2019 17:55:03  Temp {"values":[1,29.60,71.20,true]}
+16/07/2019 17:55:04  Temp {"values":[1,29.60,71.20,true]}
+16/07/2019 17:55:05  Temp {"values":[1,29.60,71.20,true]}
+16/07/2019 17:55:06  Temp {"values":[1,29.60,71.20,true]}
+16/07/2019 17:55:07  Temp {"values":[1,29.60,71.20,true]}
+16/07/2019 17:55:08  Temp {"values":[1,29.60,71.20,true]}
+16/07/2019 17:55:10  Temp {"values":[1,29.60,71.20,true]}
+16/07/2019 17:55:10  Temp {"values":[1,29.60,71.20,true]}
+16/07/2019 17:55:11  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:55:12  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:55:13  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:55:14  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 17:55:15  Temp {"values":[1,29.60,71.30,true]}
+16/07/2019 19:59:52  Connected to broker successfully
+16/07/2019 20:01:42  Connected to broker successfully
+16/07/2019 20:02:31  Connected to broker successfully
+16/07/2019 20:23:34  Connected to broker successfully
+16/07/2019 20:24:48  Connected to broker successfully
+16/07/2019 20:27:28  Connected to broker successfully
+16/07/2019 20:28:05  Connected to broker successfully
+16/07/2019 20:28:59  Connected to broker successfully
+16/07/2019 20:30:48  Connected to broker successfully
+16/07/2019 20:37:57  Connected to broker successfully
+16/07/2019 20:46:38  Connected to broker successfully
+16/07/2019 20:47:45  Connected to broker successfully
+16/07/2019 20:48:57  Connected to broker successfully
+16/07/2019 20:49:33  Connected to broker successfully
+16/07/2019 20:50:13  Connected to broker successfully
+16/07/2019 20:50:46  Connected to broker successfully
+16/07/2019 20:51:36  Connected to broker successfully
+16/07/2019 20:52:03  Connected to broker successfully
+16/07/2019 20:53:04  Connected to broker successfully
+16/07/2019 20:54:21  Connected to broker successfully
+16/07/2019 20:55:29  Connected to broker successfully
+16/07/2019 20:56:53  Connected to broker successfully
+16/07/2019 20:57:15  Connected to broker successfully
+16/07/2019 21:01:17  Connected to broker successfully
+16/07/2019 21:04:07  Connected to broker successfully
+16/07/2019 21:06:34  Connected to broker successfully
+16/07/2019 21:18:30  Connected to broker successfully
+16/07/2019 21:29:02  Connected to broker successfully

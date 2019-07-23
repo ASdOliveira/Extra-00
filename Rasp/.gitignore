@@ -1,5 +1,5 @@
-.db
-.pyc
-.txt
+*.db
+*.pyc
+*.txt
 /__pycache__
 

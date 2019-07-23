@@ -4,9 +4,10 @@ import re
 import log
 from store_Sensor_Data_to_DB import sensor_Data_Handler
 
+log.Action("Comecou")
+
 MQTT_SERVER = "localhost"
 MQTT_PATH = "Temp"
- 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
     if (rc == 0):
@@ -26,7 +27,7 @@ def on_message(client, userdata, msg):
     sensor_Data_Handler(msg.topic, msg.payload)
     
     #print(msg.topic+" "+str(msg.payload.decode("utf-8","ignore")))
-    #log.Action(msg.topic + " " + str(msg.payload.decode("utf-8","ignore")))
+    log.Action(msg.topic + " " + str(msg.payload.decode("utf-8","ignore")))
     # more callbacks, etc
  
 client = mqtt.Client()
@@ -51,7 +52,7 @@ client.loop_start()
 
 while True:
     #client.publish("Temp Rx","1")
-    time.sleep(10)
+    time.sleep(3000)
     #client.publish("Temp Rx","0")
 
     

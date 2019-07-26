@@ -1,19 +1,14 @@
 import paho.mqtt.client as mqtt
 import time
-import re
-import log
+#import re
 from store_Sensor_Data_to_DB import sensor_Data_Handler
 
-log.Action("Comecou")
 
 MQTT_SERVER = "localhost"
 MQTT_PATH = "Temp"
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
-    if (rc == 0):
-        log.Action("Connected to broker successfully")
-    else:
-        log.Action("Problems to connect with broker")    
+       
     
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
@@ -22,12 +17,13 @@ def on_connect(client, userdata, flags, rc):
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
     print ("MQTT Data Received...")
-    #print ("MQTT Topic: " + msg.topic)  
-    #print ("Data: " + msg.payload)
+   #print ("MQTT Topic: " + msg.topic)  
+   # print ("Data: " + msg.payload)
+   # print ("TESTE1")
     sensor_Data_Handler(msg.topic, msg.payload)
     
     #print(msg.topic+" "+str(msg.payload.decode("utf-8","ignore")))
-    log.Action(msg.topic + " " + str(msg.payload.decode("utf-8","ignore")))
+
     # more callbacks, etc
  
 client = mqtt.Client()

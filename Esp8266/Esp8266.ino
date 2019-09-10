@@ -4,7 +4,7 @@
  * O Broker envia uma solicitação ao ESP8266 que devolve a temperatura. 
  * O tópico no qual ele vai escrever é o nome do device.
  * 
- * Arysson Oliveira
+ * Arysson Oliveira & Jailson Gomes
 */
 
 /** Includes & Defines **/
@@ -14,7 +14,7 @@
 #include "DHT.h"
 #include <ArduinoJson.h>
 #define FANPIN 5
-
+#define LEDPIN 2
 /* JSON Settings*/
 DynamicJsonBuffer JSONbuffer;
 JsonObject& JSONencoder = JSONbuffer.createObject();
@@ -29,8 +29,8 @@ DHT dht(DHTPIN, DHTTYPE);
 long lastTime;
 
 /* WiFi Settings*/
-const char* SSID = "VIVO-C120";           // SSID da rede WiFi que deseja se conectar
-const char* PASSWORD = "4EPgEd7Tm7";   // Senha da rede WiFi que deseja se conectar
+const char* SSID = "IoT_AP";           // SSID da rede WiFi que deseja se conectar
+const char* PASSWORD = "nodemcu1";   // Senha da rede WiFi que deseja se conectar
 WiFiClient wifiClient;                        
 
 /*
@@ -42,14 +42,14 @@ const char* pass = "PFVknub1lGVQ";
 */
 
 /* MQTT Server Raspberry Settings */
-const char* BROKER_MQTT = "192.168.15.8"; //URL do broker MQTT que se deseja utilizar
+const char* BROKER_MQTT = "192.168.0.200"; //URL do broker MQTT que se deseja utilizar
 int BROKER_PORT = 1883;                      // Porta do Broker MQTT
 const char* user = "pi";
 const char* pass = "pi";
 
 //ID and Topic to publish
-#define ID_MQTT  "Device 1"
-#define ID_MQTT_INT 1            
+#define ID_MQTT  "Device 5"
+#define ID_MQTT_INT 5            
 #define TOPIC_PUBLISH "Temp"        //Informe um Tópico único. Caso sejam usados tópicos em duplicidade, o último irá eliminar o anterior.
 #define TOPIC_SUBSCRIBE "Temp Rx"
 
@@ -66,6 +66,7 @@ void recebePacote(char* topic, byte* payload, unsigned int length);
 void setup() 
 {
   Serial.begin(115200);
+  pinMode(2,OUTPUT);
   dht.begin();
   conectaWiFi();
   MQTT.setServer(BROKER_MQTT, BROKER_PORT);
@@ -82,7 +83,7 @@ void loop()
   mantemConexoes();
   enviaPacote();
   MQTT.loop();
-  delay(1000);
+  delay(30000);
 }
 
 void mantemConexoes() 
@@ -177,12 +178,14 @@ void enviaPacote()
     
     values.set(1, dht.readTemperature(),2 );
     values.set(2, dht.readHumidity(),2 );
-    values.set(3, !digitalRead(5));
+    values.set(3, !digitalRead(FANPIN));
+    digitalWrite(LEDPIN,HIGH);
+    delay(100);
     Serial.println(JSONmessageBuffer);
     
     JSONencoder.printTo(JSONmessageBuffer, sizeof(JSONmessageBuffer));
     MQTT.publish(TOPIC_PUBLISH,JSONmessageBuffer);
-    
+    digitalWrite(LEDPIN,LOW);
     //lastTime = millis();
   //}
          
